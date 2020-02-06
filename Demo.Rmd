@@ -1,0 +1,10 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+vector1  <- c(1,2,3,4) #This vector has 5 elements in it 
+vector2 <- 1:10 #This vector has 9 elements, but actually 11 elements
+```
+
