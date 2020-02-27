@@ -61,3 +61,50 @@ favstats(~Kodi.Kaia$`SD (Attention)`)
 favstats(~Kodi.Kaia$`S-Delta (No Attention)`)
 gf_line(Kodi.Kaia$`SD (Attention)`~Kodi.Kaia$Session...2) %>% gf_line(Kodi.Kaia$`S-Delta (No Attention)`~Kodi.Kaia$Session...2, color = 'red')
 ```
+
+
+
+
+
+
+## Loading in EO Data
+
+```{r}
+Kobe.Ian.EO = read_excel('Play Exp 2 (EO) Data (1).xlsx', sheet = 'P1_Kobe&Ian')
+Sally.Vanya.EO = read_excel('Play Exp 2 (EO) Data (1).xlsx', sheet = 'P2_Sally&Vanya')
+Rocky.Oaky.EO = read_excel('Play Exp 2 (EO) Data (1).xlsx', sheet = 'P3_Rocky&Oaky')
+Rosie.Carlie.EO = read_excel('Play Exp 2 (EO) Data (1).xlsx', sheet = 'P4_Rosie&Carlie')
+Koda.Ava.EO = read_excel('Play Exp 2 (EO) Data (1).xlsx', sheet = 'P5_Koda&Ava')
+Kodi.Kaia.EO = read_excel('Play Exp 2 (EO) Data (1).xlsx', sheet = 'P6_Kodi & Kaia')
+```
+
+## Descriptives for EO Data
+
+### Kobe & Ian
+
+## Loading in Reinforced Data
+
+```{r}
+Kobe.Ian.Rein = read_excel('Play Exp 3 (Reinforcer) Data (1).xlsx', sheet = 'P1_Kobe&Ian')
+Sally.Vanya.Rein = read_excel('Play Exp 3 (Reinforcer) Data (1).xlsx', sheet = 'P2_Sally&Vanya')
+Rocky.Oaky.Rein = read_excel('Play Exp 3 (Reinforcer) Data (1).xlsx', sheet = 'P3_Rocky&Oaky')
+Rosie.Carlie.Rein = read_excel('Play Exp 3 (Reinforcer) Data (1).xlsx', sheet = 'P4_Rosie&Carlie')
+Jude.Luna.Rein = read_excel('Play Exp 3 (Reinforcer) Data (1).xlsx', sheet = 'P5_Jude&Luna')
+Kodi.Kaia.Rein = read_excel('Play Exp 3 (Reinforcer) Data (1).xlsx', sheet = 'P6_Kodi & Kaia')
+```
+
+## Descriptives for Reinforced Data
+
+### Kobe & Ian
+
+### Sally & Vanya
+
+### Rocky & Oaky
+
+```{r}
+favstats(Rocky.Oaky.Rein$`Attention Control`)
+favstats(Rocky.Oaky.Rein$`Attention Test`)
+favstats(Rocky.Oaky.Rein$Alone)
+gf_line(Rocky.Oaky.Rein$`Attention Control`~Rocky.Oaky.Rein$Session) %>% gf_line(Rocky.Oaky.Rein$`Attention Test`~Rocky.Oaky.Rein$Session, color = 'red') %>% gf_line(Rocky.Oaky.Rein$Alone~Rocky.Oaky.Rein$Session, color = 'blue')
+```
+
