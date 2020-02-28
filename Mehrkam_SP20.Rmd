@@ -27,39 +27,39 @@ Jude.Luna = read_excel('Play Exp 1 (SD) Data (1).xlsx', sheet = 'P12_Jude&Luna')
 library(mosaic)
 favstats(~Kobe.Ian$SD)
 gf_point(Kobe.Ian$SD~Kobe.Ian$Session)
-gf_line(Kobe.Ian$SD~Kobe.Ian$Session) %>% gf_line(Kobe.Ian$`S-Delta`~Kobe.Ian$Session, color = 'red')
+gf_line(Kobe.Ian$SD~Kobe.Ian$Session) %>% gf_line(Kobe.Ian$`S-Delta`~Kobe.Ian$Session, color = 'red') %>% gf_labs(title = 'Kobe & Ian SD v. S-Delta Experiment', x = 'Session' , y = 'Time Played (Seconds)')
 ```
 ### Sally & Vanya
 ```{r}
 library(mosaic)
 favstats(~Sally.Vanya$`Percent of Scored Intervals in SD...2`)
 favstats(~Sally.Vanya$`Percent of Scored Intervals in S-delta...3`)
-gf_line(Sally.Vanya$`Percent of Scored Intervals in SD...2`~Sally.Vanya$Session...1) %>% gf_line(Sally.Vanya$`Percent of Scored Intervals in S-delta...3`~Sally.Vanya$Session...1, color = 'red')
+gf_line(Sally.Vanya$`Percent of Scored Intervals in SD...2`~Sally.Vanya$Session...1) %>% gf_line(Sally.Vanya$`Percent of Scored Intervals in S-delta...3`~Sally.Vanya$Session...1, color = 'red') %>% gf_labs(title = 'Sally & Vanya SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
 ### Rocky & Oaky
 ```{r}
 library(mosaic)
 favstats(~Rocky.Oaky$`SD (Attention)`)
-gf_line(Rocky.Oaky$`SD (Attention)`~Rocky.Oaky$Session...2) %>% gf_line(Rocky.Oaky$`S-Delta (No Attention)`~Rocky.Oaky$Session...2, color = 'red')
+gf_line(Rocky.Oaky$`SD (Attention)`~Rocky.Oaky$Session...2) %>% gf_line(Rocky.Oaky$`S-Delta (No Attention)`~Rocky.Oaky$Session...2, color = 'red') %>% gf_labs(title =  'Rocky & Oaky SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
 ### Rosie & Carlie
 ```{r}
 library(mosaic)
 favstats(~Rosie.Carlie$`SD (Attention)`)
-gf_line(Rosie.Carlie$`SD (Attention)`~Rosie.Carlie$Session...2) %>% gf_line(Rosie.Carlie$`S-Delta (No Attention)`~Rosie.Carlie$Session...2, color = 'red')
+gf_line(Rosie.Carlie$`SD (Attention)`~Rosie.Carlie$Session...2) %>% gf_line(Rosie.Carlie$`S-Delta (No Attention)`~Rosie.Carlie$Session...2, color = 'red') %>% gf_labs(title = 'Rosie & Carlie SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
 ### Koda & Ava
 ```{r}
 library(mosaic)
 favstats(~Koda.Ava$`SD (Attention)`)
-gf_line(Koda.Ava$`SD (Attention)`~Koda.Ava$Session) %>% gf_line(Koda.Ava$`S-Delta (No Attention)`~Koda.Ava$Session, color = 'red')
+gf_line(Koda.Ava$`SD (Attention)`~Koda.Ava$Session) %>% gf_line(Koda.Ava$`S-Delta (No Attention)`~Koda.Ava$Session, color = 'red') %>% gf_labs(title = 'Koda & Ava SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
 ### Kodi & Kaia
 ```{r}
 library(mosaic)
 favstats(~Kodi.Kaia$`SD (Attention)`)
 favstats(~Kodi.Kaia$`S-Delta (No Attention)`)
-gf_line(Kodi.Kaia$`SD (Attention)`~Kodi.Kaia$Session...2) %>% gf_line(Kodi.Kaia$`S-Delta (No Attention)`~Kodi.Kaia$Session...2, color = 'red')
+gf_line(Kodi.Kaia$`SD (Attention)`~Kodi.Kaia$Session...2) %>% gf_line(Kodi.Kaia$`S-Delta (No Attention)`~Kodi.Kaia$Session...2, color = 'red') %>% gf_labs(title = 'Kodi & Kaia SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
 
 
@@ -105,6 +105,6 @@ Kodi.Kaia.Rein = read_excel('Play Exp 3 (Reinforcer) Data (1).xlsx', sheet = 'P6
 favstats(Rocky.Oaky.Rein$`Attention Control`)
 favstats(Rocky.Oaky.Rein$`Attention Test`)
 favstats(Rocky.Oaky.Rein$Alone)
-gf_line(Rocky.Oaky.Rein$`Attention Control`~Rocky.Oaky.Rein$Session) %>% gf_line(Rocky.Oaky.Rein$`Attention Test`~Rocky.Oaky.Rein$Session, color = 'red') %>% gf_line(Rocky.Oaky.Rein$Alone~Rocky.Oaky.Rein$Session, color = 'blue')
+gf_line(Rocky.Oaky.Rein$`Attention Control`~Rocky.Oaky.Rein$Session) %>% gf_line(Rocky.Oaky.Rein$`Attention Test`~Rocky.Oaky.Rein$Session, color = 'red') %>% gf_line(Rocky.Oaky.Rein$Alone~Rocky.Oaky.Rein$Session, color = 'blue') %>% gf_labs(title = 'Rocky & Oaky Reinforcer Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
 
