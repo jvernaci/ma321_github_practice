@@ -82,6 +82,29 @@ Kodi.Kaia.EO = read_excel('Play Exp 2 (EO) Data (1).xlsx', sheet = 'P6_Kodi & Ka
 
 ### Kobe & Ian
 
+### Sally & Vanya
+
+### Rocky & Oaky
+```{r}
+par(mfrow = c(1,2))
+barplot(c(0, 0, 4, 1), names.arg = c('0 min', '30 min', '120 min', '>360 min'), ylim = c(0, 4), xlab = 'Level of Owner Deprivation', ylab = 'Time Played (Seconds)', col = rainbow(4))
+barplot(c(164, 0, 28, 99), names.arg = c('0 min', '30 min', '120 min', '>360 min'), ylim = c(0, 164), xlab = 'Level of Owner Deprivation', ylab = 'Time Played (Seconds)', col = rainbow(4))
+```
+
+### Rosie & Carlie
+```{r}
+par(mfrow = c(1,2))
+barplot(c(4, 34, 12, 3), names.arg = c('0 min', '30 min', '120 min', '>360 min'), ylim = c(0, 34), xlab = 'Level of Owner Deprivation', ylab = 'Time Played (Seconds)', col = rainbow(4))
+barplot(c(9, 19, 21, 6), names.arg = c('0 min', '30 min', '120 min', '>360 min'), ylim = c(0, 21), xlab = 'Level of Owner Deprivation', ylab = 'Time Played (Seconds)', col = rainbow(4))
+```
+
+### Kodi & Kaia
+```{r}
+par(mfrow = c(1,2))
+barplot(c(0, 0, 0, 0), names.arg = c('0 min', '30 min', '120 min', '>360 min'), ylim = c(0, 0), xlab = 'Level of Owner Deprivation', ylab = 'Time Played (Seconds)', col = rainbow(4))
+barplot(c(0, 0, 0, 0), names.arg = c('0 min', '30 min', '120 min', '>360 min'), ylim = c(0, 0), xlab = 'Level of Owner Deprivation', ylab = 'Time Played (Seconds)', col = rainbow(4))
+```
+
 ## Loading in Reinforced Data
 
 ```{r}
@@ -98,6 +121,12 @@ Kodi.Kaia.Rein = read_excel('Play Exp 3 (Reinforcer) Data (1).xlsx', sheet = 'P6
 ### Kobe & Ian
 
 ### Sally & Vanya
+```{r}
+favstats(Sally.Vanya.Rein$`Attention Control`)
+favstats(Sally.Vanya.Rein$`Attention Test`)
+favstats(Sally.Vanya.Rein$Alone)
+gf_line(Sally.Vanya.Rein$`Attention Control`~Sally.Vanya.Rein$Session) %>% gf_line(Sally.Vanya.Rein$`Attention Test`~Sally.Vanya.Rein$Session, color = 'red') %>% gf_line(Sally.Vanya.Rein$Alone~Sally.Vanya.Rein$Session, color = 'blue') %>% gf_labs(title = 'Sally & Vanya Reinforcer Experiment', x = 'Session', y = 'Time Played (Seconds)')
+```
 
 ### Rocky & Oaky
 
@@ -107,4 +136,31 @@ favstats(Rocky.Oaky.Rein$`Attention Test`)
 favstats(Rocky.Oaky.Rein$Alone)
 gf_line(Rocky.Oaky.Rein$`Attention Control`~Rocky.Oaky.Rein$Session) %>% gf_line(Rocky.Oaky.Rein$`Attention Test`~Rocky.Oaky.Rein$Session, color = 'red') %>% gf_line(Rocky.Oaky.Rein$Alone~Rocky.Oaky.Rein$Session, color = 'blue') %>% gf_labs(title = 'Rocky & Oaky Reinforcer Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
+
+# 3 March 2020
+
+### Rosie & Carlie
+
+```{r}
+favstats(Rosie.Carlie.Rein$`Attention Control`)
+favstats(Rosie.Carlie.Rein$`Attention Test`)
+favstats(Rosie.Carlie.Rein$Alone)
+gf_line(Rosie.Carlie.Rein$`Attention Control`~Rosie.Carlie.Rein$Session) %>% gf_line(Rosie.Carlie.Rein$`Attention Test`~Rosie.Carlie.Rein$Session, color = 'red') %>% gf_line(Rosie.Carlie.Rein$Alone~Rosie.Carlie.Rein$Session, color = 'blue') %>% gf_labs(title = 'Rosie & Carlie Reinforcer Experiment', x = 'Session', y = 'Time Played (Seconds)')
+```
+
+### Jude & Luna
+
+### Kodi & Kaia
+
+```{r}
+favstats(Kodi.Kaia.Rein$`Attention Control`)
+favstats(Kodi.Kaia.Rein$`Attention Test`)
+favstats(Kodi.Kaia.Rein$Alone)
+gf_line(Kodi.Kaia.Rein$`Attention Control`~Kodi.Kaia.Rein$Session) %>% gf_line(Kodi.Kaia.Rein$`Attention Test`~Kodi.Kaia.Rein$Session, color = 'red') %>% gf_line(Kodi.Kaia.Rein$Alone~Kodi.Kaia.Rein$Session, color = 'blue') %>% gf_labs(title = 'Kodi & Kaia Reinforcer Experiment', x = 'Session', y = 'Time Played (Seconds)')
+```
+```{r}
+
+
+```
+
 
