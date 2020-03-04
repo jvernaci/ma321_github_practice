@@ -87,22 +87,22 @@ Kodi.Kaia.EO = read_excel('Play Exp 2 (EO) Data (1).xlsx', sheet = 'P6_Kodi & Ka
 ### Rocky & Oaky
 ```{r}
 par(mfrow = c(1,2))
-barplot(c(0, 0, 4, 1), names.arg = c('0 min', '30 min', '120 min', '>360 min'), ylim = c(0, 4), xlab = 'Level of Owner Deprivation', ylab = 'Time Played (Seconds)', col = rainbow(4))
-barplot(c(164, 0, 28, 99), names.arg = c('0 min', '30 min', '120 min', '>360 min'), ylim = c(0, 164), xlab = 'Level of Owner Deprivation', ylab = 'Time Played (Seconds)', col = rainbow(4))
+barplot(c(0, 0, 4, 1), names.arg = c('0', '30', '120', '>360'), ylim = c(0, 4), xlab = 'Level of Owner Deprivation (Min)', ylab = 'Time Played (Seconds)', col = rainbow(4))
+barplot(c(164, 0, 28, 99), names.arg = c('0', '30', '120', '>360'), ylim = c(0, 164), xlab = 'Level of Owner Deprivation (Min)', ylab = 'Time Played (Seconds)', col = rainbow(4))
 ```
 
 ### Rosie & Carlie
 ```{r}
 par(mfrow = c(1,2))
-barplot(c(4, 34, 12, 3), names.arg = c('0 min', '30 min', '120 min', '>360 min'), ylim = c(0, 34), xlab = 'Level of Owner Deprivation', ylab = 'Time Played (Seconds)', col = rainbow(4))
-barplot(c(9, 19, 21, 6), names.arg = c('0 min', '30 min', '120 min', '>360 min'), ylim = c(0, 21), xlab = 'Level of Owner Deprivation', ylab = 'Time Played (Seconds)', col = rainbow(4))
+barplot(c(4, 34, 12, 3), names.arg = c('0', '30', '120', '>360'), ylim = c(0, 34), xlab = 'Level of Owner Deprivation (Min)', ylab = 'Time Played (Seconds)', col = rainbow(4))
+barplot(c(9, 19, 21, 6), names.arg = c('0', '30', '120', '>360'), ylim = c(0, 21), xlab = 'Level of Owner Deprivation (Min)', ylab = 'Time Played (Seconds)', col = rainbow(4))
 ```
 
 ### Kodi & Kaia
 ```{r}
 par(mfrow = c(1,2))
-barplot(c(0, 0, 0, 0), names.arg = c('0 min', '30 min', '120 min', '>360 min'), ylim = c(0, 0), xlab = 'Level of Owner Deprivation', ylab = 'Time Played (Seconds)', col = rainbow(4))
-barplot(c(0, 0, 0, 0), names.arg = c('0 min', '30 min', '120 min', '>360 min'), ylim = c(0, 0), xlab = 'Level of Owner Deprivation', ylab = 'Time Played (Seconds)', col = rainbow(4))
+barplot(c(0, 0, 0, 0), names.arg = c('0', '30', '120', '>360'), ylim = c(0, 0), xlab = 'Level of Owner Deprivation (Min)', ylab = 'Time Played (Seconds)', col = rainbow(4))
+barplot(c(0, 0, 0, 0), names.arg = c('0', '30', '120', '>360'), ylim = c(0, 0), xlab = 'Level of Owner Deprivation (Min)', ylab = 'Time Played (Seconds)', col = rainbow(4))
 ```
 
 ## Loading in Reinforced Data
