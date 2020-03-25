@@ -215,8 +215,7 @@ The Mann-Whitney U test shows a p-value of 0.01095 which is significant enough t
 
 ### Sally & Vanya
 ```{r}
-library(dunn.test)
-kruskal.test(Sally.Vanya.Rein$`Attention Control`, Sally.Vanya.Rein$`Attention Test`, Sally.Vanya.Rein$'Alone')
+
 ```
 ## Loading in Reinforcer Data
 ```{r}
