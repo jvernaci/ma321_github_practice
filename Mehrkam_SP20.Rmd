@@ -26,27 +26,28 @@ Jude.Luna = read_excel('Play Exp 1 (SD) Data (1).xlsx', sheet = 'P12_Jude&Luna')
 ```{r}
 library(mosaic)
 favstats(~Kobe.Ian$SD)
+favstats(~Kobe.Ian$`S-Delta`)
 gf_point(Kobe.Ian$SD~Kobe.Ian$Session)
 gf_line(Kobe.Ian$SD~Kobe.Ian$Session) %>% gf_line(Kobe.Ian$`S-Delta`~Kobe.Ian$Session, color = 'red') %>% gf_labs(title = 'Kobe & Ian SD v. S-Delta Experiment', x = 'Session' , y = 'Time Played (Seconds)')
 ```
 ### Sally & Vanya
 ```{r}
 library(mosaic)
-favstats(~Sally.Vanya$`Percent of Scored Intervals in SD...2`)
-favstats(~Sally.Vanya$`Percent of Scored Intervals in S-delta...3`)
-gf_line(Sally.Vanya$`Percent of Scored Intervals in SD...2`~Sally.Vanya$Session...1) %>% gf_line(Sally.Vanya$`Percent of Scored Intervals in S-delta...3`~Sally.Vanya$Session...1, color = 'red') %>% gf_labs(title = 'Sally & Vanya SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
+favstats(~Sally.Vanya$`Percent of Scored Intervals in SD...10`)
+favstats(~Sally.Vanya$`Percent of Scored Intervals in S-delta...11`)
+gf_line(Sally.Vanya$`Percent of Scored Intervals in SD...10`~Sally.Vanya$Session...1) %>% gf_line(Sally.Vanya$`Percent of Scored Intervals in S-delta...11`~Sally.Vanya$Session...1, color = 'red') %>% gf_labs(title = 'Sally & Vanya SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
 ### Rocky & Oaky
 ```{r}
 library(mosaic)
-favstats(~Rocky.Oaky$`SD (Attention)`)
-gf_line(Rocky.Oaky$`SD (Attention)`~Rocky.Oaky$Session...2) %>% gf_line(Rocky.Oaky$`S-Delta (No Attention)`~Rocky.Oaky$Session...2, color = 'red') %>% gf_labs(title =  'Rocky & Oaky SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
+favstats(~Rocky.Oaky$`SD (s)`)
+gf_line(Rocky.Oaky$`SD (s)`~Rocky.Oaky$Session...2) %>% gf_line(Rocky.Oaky$`S-Delta (s)`~Rocky.Oaky$Session...2, color = 'red') %>% gf_labs(title =  'Rocky & Oaky SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
 ### Rosie & Carlie
 ```{r}
 library(mosaic)
-favstats(~Rosie.Carlie$`SD (Attention)`)
-gf_line(Rosie.Carlie$`SD (Attention)`~Rosie.Carlie$Session...2) %>% gf_line(Rosie.Carlie$`S-Delta (No Attention)`~Rosie.Carlie$Session...2, color = 'red') %>% gf_labs(title = 'Rosie & Carlie SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
+favstats(~Rosie.Carlie$`SD (s)`)
+gf_line(Rosie.Carlie$`SD (s)`~Rosie.Carlie$Session...2) %>% gf_line(Rosie.Carlie$`S-Delta (s)`~Rosie.Carlie$Session...2, color = 'red') %>% gf_labs(title = 'Rosie & Carlie SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
 ### Koda & Ava
 ```{r}
@@ -57,9 +58,9 @@ gf_line(Koda.Ava$`SD (Attention)`~Koda.Ava$Session) %>% gf_line(Koda.Ava$`S-Delt
 ### Kodi & Kaia
 ```{r}
 library(mosaic)
-favstats(~Kodi.Kaia$`SD (Attention)`)
-favstats(~Kodi.Kaia$`S-Delta (No Attention)`)
-gf_line(Kodi.Kaia$`SD (Attention)`~Kodi.Kaia$Session...2) %>% gf_line(Kodi.Kaia$`S-Delta (No Attention)`~Kodi.Kaia$Session...2, color = 'red') %>% gf_labs(title = 'Kodi & Kaia SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
+favstats(~Kodi.Kaia$`SD (s)`)
+favstats(~Kodi.Kaia$`S-Delta (s)`)
+gf_line(Kodi.Kaia$`SD (s)`~Kodi.Kaia$Session...2) %>% gf_line(Kodi.Kaia$`S-Delta (s)`~Kodi.Kaia$Session...2, color = 'red') %>% gf_labs(title = 'Kodi & Kaia SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
 
 
@@ -158,9 +159,79 @@ favstats(Kodi.Kaia.Rein$`Attention Test`)
 favstats(Kodi.Kaia.Rein$Alone)
 gf_line(Kodi.Kaia.Rein$`Attention Control`~Kodi.Kaia.Rein$Session) %>% gf_line(Kodi.Kaia.Rein$`Attention Test`~Kodi.Kaia.Rein$Session, color = 'red') %>% gf_line(Kodi.Kaia.Rein$Alone~Kodi.Kaia.Rein$Session, color = 'blue') %>% gf_labs(title = 'Kodi & Kaia Reinforcer Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
+
+# 5 March 2020
+
+#### SD Data Analysis
 ```{r}
-
-
+wilcox.test(Sally.Vanya$`Percent of Scored Intervals in SD...10`, Sally.Vanya$`Percent of Scored Intervals in S-delta...11`, alternative = c("two.sided"))
 ```
+The Mann-Whitney U test shows a p-value of 0.5398 which is not significant enough to reject the null hypothesis. We cannot conclude that the distributions of the SD and S-Delta are different for Sally and Vanya. 
+
+```{r}
+curve(dt (x, df = 13.574), xlim = c(-3, 3), main = 'Sally & Vanya T-Distribution', xlab = 't-statistic', ylab = 'Density')
+abline(v = 0.51729, col = 'blue')
+abline(v = qt(.025, df = 13.574), col = 'red')
+abline(v = qt(.975, df = 13.574), col = 'red')
+```
+```{r}
+hist(Sally.Vanya$`Percent of Scored Intervals in SD...10`, breaks = 10)
+shapiro.test(Sally.Vanya$`Percent of Scored Intervals in SD...10`)
+```
+# 24 March 2020
+
+#### SD Data Analysis
+
+### Kobe & Ian
+```{r}
+wilcox.test(Kobe.Ian$'SD', Kobe.Ian$`S-Delta`, alternative = c("two.sided"))
+```
+The Mann-Whitney U test shows a p-value of 6.386e-05 which is significant enough to reject the null hypothesis. We can conclude that the distributions of the SD and S-Delta are different for Kobe and Ian.
+
+### Rocky & Oaky
+```{r}
+wilcox.test(Rocky.Oaky$`SD (s)`, Rocky.Oaky$`S-Delta (s)`, alternative = c("two.sided"))
+```
+The Mann-Whitney U test shows a p-value of 6.34e-05 which is significant enough to reject the null hypothesis. We can conclude that the distributions of the SD and S-Delta are different for Rocky and Oaky.
+
+### Rosie & Carlie
+```{r}
+wilcox.test(Rosie.Carlie$`SD (s)`, Rosie.Carlie$`S-Delta (s)`, alternative = c("two.sided"))
+```
+The Mann-Whitney U test shows a p-value of 0.002178 which is significant enough to reject the null hypothesis. We can conclude that the distributions of the SD and S-Delta are different for Rosie and Carlie.
+
+### Koda & Ava
+```{r}
+wilcox.test(Koda.Ava$`SD (Attention)`, Koda.Ava$`S-Delta (No Attention)`, alternative = c("two.sided"))
+```
+The Mann-Whitney U test shows a p-value of 0.3681 which is not significant enough to reject the null hypothesis. We can not conclude that the distributions of the SD and S-Delta are different for Koda and Ava. 
+### Kodi & Kaia
+```{r}
+wilcox.test(Kodi.Kaia$`SD (s)`, Kodi.Kaia$`S-Delta (s)`, alternative = c("two.sided"))
+```
+The Mann-Whitney U test shows a p-value of 0.01095 which is significant enough to reject the null hypothesis. We can conclude that the distributions of the SD and S-Delta are different for Kodi and Kaia.
+
+#### Kruskall-Wallis Tests for Reinforcer Data 
+
+### Sally & Vanya
+```{r}
+library(dunn.test)
+kruskal.test(Sally.Vanya.Rein$`Attention Control`, Sally.Vanya.Rein$`Attention Test`, Sally.Vanya.Rein$'Alone')
+```
+## Loading in Reinforcer Data
+```{r}
+Kobe.Ian.Rein = read_excel('Reinforcer_Data.xlsx', sheet = 'P1_Kobe&Ian')
+Sally.Vanya.Rein = read_excel('Reinforcer_Data.xlsx', sheet = 'P2_Sally&Vanya')
+Rocky.Oaky.Rein = read_excel('Reinforcer_Data.xlsx', sheet = 'P3_Rocky&Oaky')
+Rosie.Carlie.Rein = read_excel('Reinforcer_Data.xlsx', sheet = 'P4_Rosie&Carlie')
+Jude.Luna.Rein = read_excel('Reinforcer_Data.xlsx', sheet = 'P5_Jude&Luna')
+Kodi.Kaia.Rein = read_excel('Reinforcer_Data.xlsx', sheet = 'P6_Kodi & Kaia')
+```
+
+
+
+
+
+
 
 
