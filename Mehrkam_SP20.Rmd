@@ -215,7 +215,8 @@ The Mann-Whitney U test shows a p-value of 0.01095 which is significant enough t
 
 ### Sally & Vanya
 ```{r}
-
+library(dunn.test)
+kruskal.test(Sally.Vanya.Rein$`Attention Control`, Sally.Vanya.Rein$`Attention Test`, Sally.Vanya.Rein$Alone)
 ```
 ## Loading in Reinforcer Data
 ```{r}
@@ -227,8 +228,22 @@ Jude.Luna.Rein = read_excel('Reinforcer_Data.xlsx', sheet = 'P5_Jude&Luna')
 Kodi.Kaia.Rein = read_excel('Reinforcer_Data.xlsx', sheet = 'P6_Kodi & Kaia')
 ```
 
+# 26 March 2020
 
+## Loading in MASTER files
 
+```{r}
+SD.Master = read_excel('SD_Data.xlsx', sheet = 'SD Master')
+EO.Master = read_excel('EO_Data.xlsx', sheet = 'EO Master')
+Rein.Master = read_excel('Play Exp 3 (Reinforcer) Data MASTER.xlsx', sheet = 'Master Reinforcer')
+```
+
+Consolidated all datasheets into separate Master sheets to make it easier to run code collectively in R
+
+## Descriptives of Overall Statistics
+
+#### SD Dataset
+I (Sonny) will run these calculations and have it set for tuesdays presentation. 
 
 
 
