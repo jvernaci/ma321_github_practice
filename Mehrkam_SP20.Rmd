@@ -30,6 +30,7 @@ favstats(~Kobe.Ian$`S-Delta`)
 gf_point(Kobe.Ian$SD~Kobe.Ian$Session)
 gf_line(Kobe.Ian$SD~Kobe.Ian$Session) %>% gf_line(Kobe.Ian$`S-Delta`~Kobe.Ian$Session, color = 'red') %>% gf_labs(title = 'Kobe & Ian SD v. S-Delta Experiment', x = 'Session' , y = 'Time Played (Seconds)')
 ```
+
 ### Sally & Vanya
 ```{r}
 library(mosaic)
@@ -63,10 +64,7 @@ favstats(~Kodi.Kaia$`S-Delta (s)`)
 gf_line(Kodi.Kaia$`SD (s)`~Kodi.Kaia$Session...2) %>% gf_line(Kodi.Kaia$`S-Delta (s)`~Kodi.Kaia$Session...2, color = 'red') %>% gf_labs(title = 'Kodi & Kaia SD v. S-Delta Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
 
-
-
-
-
+The above shows descriptive statistics ran for my assigned dog pairs. Each bit of information contains code used to run the descriptives as well as line plots resembling those of which are found on the excel spreadsheets given by the client. 
 
 ## Loading in EO Data
 
@@ -105,6 +103,8 @@ par(mfrow = c(1,2))
 barplot(c(0, 0, 0, 0), names.arg = c('0', '30', '120', '>360'), ylim = c(0, 0), xlab = 'Level of Owner Deprivation (Min)', ylab = 'Time Played (Seconds)', col = rainbow(4))
 barplot(c(0, 0, 0, 0), names.arg = c('0', '30', '120', '>360'), ylim = c(0, 0), xlab = 'Level of Owner Deprivation (Min)', ylab = 'Time Played (Seconds)', col = rainbow(4))
 ```
+
+The above illustrates descriptive statistics of the EO datset ran for my assigned pairs of dogs. Plots illustrate an overlay chart of the time played in seconds (y-axis) and level of owner deprivation in minutes (x-axis). 
 
 ## Loading in Reinforced Data
 
@@ -160,6 +160,7 @@ favstats(Kodi.Kaia.Rein$Alone)
 gf_line(Kodi.Kaia.Rein$`Attention Control`~Kodi.Kaia.Rein$Session) %>% gf_line(Kodi.Kaia.Rein$`Attention Test`~Kodi.Kaia.Rein$Session, color = 'red') %>% gf_line(Kodi.Kaia.Rein$Alone~Kodi.Kaia.Rein$Session, color = 'blue') %>% gf_labs(title = 'Kodi & Kaia Reinforcer Experiment', x = 'Session', y = 'Time Played (Seconds)')
 ```
 
+The above shows descriptives for the reinforced dataset of my assigned dog pairs. The plots indicate sessions (x-axis) with time played in seconds (y-axis) and the three different colored lines indicate the 3 reinforced variables of attention test, attention control, and alone. 
 # 5 March 2020
 
 #### SD Data Analysis
@@ -218,6 +219,9 @@ The Mann-Whitney U test shows a p-value of 0.01095 which is significant enough t
 library(dunn.test)
 kruskal.test(Sally.Vanya.Rein$`Attention Control`, Sally.Vanya.Rein$`Attention Test`, Sally.Vanya.Rein$Alone)
 ```
+
+The kruskall-wallis test will not be used and is unsuccessful for the reinforced dataset because it is an independent test and a repeated measure ANOVA test would work best. 
+
 ## Loading in Reinforcer Data
 ```{r}
 Kobe.Ian.Rein = read_excel('Reinforcer_Data.xlsx', sheet = 'P1_Kobe&Ian')
@@ -244,6 +248,25 @@ Consolidated all datasheets into separate Master sheets to make it easier to run
 
 #### SD Dataset
 I (Sonny) will run these calculations and have it set for tuesdays presentation. 
+
+# 28 March 2020
+
+## Descriptives of Overall Statistics
+
+#### SD Dataset
+
+```{r}
+favstats(~SD.Master$`SD (s)`)
+favstats(~SD.Master$`S-Delta (s)`)
+gf_histogram(~SD.Master$`SD (s)`) %>% gf_labs(x = 'Time Played (Seconds)', title = 'SD (s) Histogram')
+gf_histogram(~SD.Master$`S-Delta (s)`) %>% gf_labs(x = 'Time Played (Seconds)', title = 'S-Delta (s) Histogram')
+```
+
+Above are the descriptive statistics of the overall SD master files. The first histogram for SD (s) indicates data that is not normal because it is not a a symmetric histogram. It appears to have a right tail that is stretched thus being positively skewed. 
+
+The second histogram for S-Delta (s) indicates data that is not normalized. Majority of the data is congested on the left side between 0 and 20 seconds. 
+
+Higher mean and standard deviation for SD data than S-Delta data. This makes sense because there is less playing time among the dogs that were given no attention. 
 
 
 
